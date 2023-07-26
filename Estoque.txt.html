@@ -1,0 +1,34 @@
+<script>
+saldo = parseInt(prompt("Informar o Saldo Inicial"));
+window.alert("Saldo Inicial: " + saldo);
+document.write("Saldo Inicial: " + saldo + "<br>");
+encerrar = "n";
+while(encerrar == "n")
+{
+tipo = parseInt(prompt("Tipo de Movimentação (Digite: [1]-Entrada / [2]-Saída)"));
+quantidade = parseInt(prompt("Informar a Quantidade"));
+if(tipo == 1)
+{
+saldo = saldo + quantidade;
+document.write("Entrada no Estoque: " + quantidade + "<br>");
+window.alert("Saldo Atual: " + saldo);
+}
+if(tipo == 2)
+{
+if(saldo >= quantidade)
+{
+saldo = saldo - quantidade;
+document.write("Saída do Estoque: " + quantidade + "<br>");
+window.alert("Saldo Atual: " + saldo);
+}
+else
+{
+document.write("Saldo Insuficiente" + "<br>");
+alert("Saldo Insuficiente");
+}
+}
+document.write("Saldo: " + saldo + "<br>");
+encerrar = prompt("Deseja Encerrar? (s/n)");
+}
+document.write("Sistema encerrado" + "<br>");
+</script>
